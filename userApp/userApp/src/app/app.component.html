@@ -1,0 +1,90 @@
+<div> 
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span>Legacy life plan</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/home"><mat-icon>home</mat-icon>Home</a>
+      <a mat-button routerLink="/trustees"><mat-icon>supervisor_account</mat-icon>Trustees</a>
+      <a mat-button routerLink="/professionals" style="color: red;"><mat-icon>person</mat-icon>Professionals</a>
+      <a mat-button routerLink="/more">	<mat-icon>more_horiz</mat-icon>More</a>
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        
+        <a mat-button routerLink="/home"><mat-icon>home</mat-icon>Home</a>
+        <a mat-button routerLink="/trustees"><mat-icon>supervisor_account</mat-icon>
+          Trustees</a>
+        <a mat-button routerLink="/professionals" style="color: red;"><mat-icon>person</mat-icon>Professionals</a>
+        <a mat-button routerLink="/more">	<mat-icon>more_horiz</mat-icon>More</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div class="container" fxLayout.gt-sm="row" fxLayout.lt-md="column">
+        <div fxFlex.gt-sm="20%" fxFlex.lt-md="20%">
+        <div>
+          <img src="../assets/avtar.png">
+          <span class="label-text1">Shital </span>
+          <br>
+          <!-- <span class="label-text1"> </span> -->
+        </div>
+        <br>
+        <a style="font-size: 15px;color: red; "><mat-icon> email</mat-icon>Send a email</a>
+        </div>
+        <div fxFlex.gt-sm="80%" fxFlex.lt-md="80%" class="right heading">
+        <div style="text-align: start; background-color: darkgray; padding: 15px;
+      font-size: 20px;" ><span>Business details</span></div>
+        <br>
+          <div class="div-right">
+            <div fxLayoutAlign="right right" fxLayout.gt-sm="row" class="div-border">
+              <div fxFlex.gt-sm="20%">  
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>          
+                <span style="text-align: start; float: left; font-size: 20px;"><mat-icon>person</mat-icon>Profile</span>
+              </div>
+              <div fxFlex.gt-sm="80%">
+                <button mat-button class="primary-button" (click)="openDialog()">Edit Profile</button>
+              </div>
+            </div>
+            <div  class="detail-div">
+              <div fxLayout.gt-sm="row" class="label-text row" fxLayout="column">
+                <label class="column">Name: </label>
+                <span class="column"> {{UserInfo.name}} </span>
+              </div>
+              <div fxLayout.gt-sm="row" class="label-text row">
+                <label class="column">Domain: </label>
+                <span class="column"> {{UserInfo.domain}} </span>
+              </div>
+              <div fxLayout.gt-sm="row" class="label-text row">
+                <label class="column">Gender: </label>
+                <span class="column"> {{UserInfo.gender}} </span>
+              </div>
+              <div fxLayout.gt-sm="row" class="label-text row">
+                <label class="column">Date of birth: </label>
+                <span class="column"> {{UserInfo.dob | date}} </span>
+              </div>
+              <div fxLayout.gt-sm="row" class="label-text row">
+                <label class="column">Phone number: </label>
+                <span class="column"> {{UserInfo.phoneNo}} </span>
+              </div>
+              <div fxLayout.gt-sm="row" class="label-text row">
+                <label class="column">Location: </label>
+                <span class="column"> {{UserInfo.location}} </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

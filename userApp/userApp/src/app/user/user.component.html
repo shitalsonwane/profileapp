@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Profile edit</h1>
+<div mat-dialog-content>
+    <mat-form-field class="row">
+        <label class="label-size">Name: </label>
+        <input class="column" matInput [(ngModel)]="data.name" maxlength="50">
+    </mat-form-field>
+    <mat-form-field>
+        <label class="label-size">Phone number: </label>
+        <span style="float: left;">+91</span>
+        <input class="column" matInput [(ngModel)]="data.phoneNo" maxlength="10">
+    </mat-form-field>
+    <mat-form-field>
+        <label class="label-size">Location: </label>
+        <input class="column" matInput [(ngModel)]="data.location" maxlength="80">
+    </mat-form-field>
+    <mat-form-field>
+        <label class="label-size">Domain: </label>
+        <input class="column" matInput [(ngModel)]="data.domain" maxlength="50">
+    </mat-form-field>
+
+    <mat-form-field>
+        <label class="label-size">Date of birth: </label>
+        <input class="column" matInput [matDatepicker]="pickeryear" [(ngModel)]="data.dob">
+        <mat-datepicker-toggle  [for]="pickeryear"></mat-datepicker-toggle>
+        <mat-datepicker #pickeryear startView="year"></mat-datepicker>
+    </mat-form-field>
+
+    <div>
+        <label class="label-size">Gender: </label>
+        <mat-radio-group aria-label="Select an option" class="column" [(ngModel)]="data.gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial class="primary-button">Save</button>
+</div>

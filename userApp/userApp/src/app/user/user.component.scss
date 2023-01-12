@@ -1,0 +1,40 @@
+input.mat-input-element {
+    color: black;
+  }
+
+input  {
+    border: 1px black solid;
+}
+.primary-button {
+    background-color: red;
+    color: white;
+    float: right;
+    font-size: 20px;
+}
+.mat-dialog-content {
+    display: grid;
+    margin: 0 -24px;
+    padding: 0 24px;
+    max-height: 65vh;
+    overflow: auto;
+}
+.mat-dialog-actions {
+    display: contents;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+.label-size {
+    float: left;
+    width: 40%;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    text-align: initial;
+}
